@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+    tsa:
+        build: .
+        image: rrrrind/tsa
+        container_name : tsa
+        ports:
+            - 8787:8787
+        environment: 
+            - USERID=rstudio
+            - PASSWORD=rrrrind/tsa
+        volumes: 
+            - type: bind
+              source: ./workspace
+              target: /home/rstudio/workspace
